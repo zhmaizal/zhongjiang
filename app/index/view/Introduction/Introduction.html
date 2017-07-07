@@ -1,0 +1,64 @@
+{extend name="base"}
+{block name="content"}
+<div class="centBox">
+	<div class="neiye clearfix">
+    	<div class="neiyeL">
+        	<div class="banL noel">
+       	 		 <div class="lanmu">
+       		  		<ul>
+                  {foreach name='subnav'  item='vo'}
+                    <li><a href="{:url($vo['url'],['id'=>$vo['id']])}" {if condition="input('param.id')==$vo['id']"}class="xuanz"{/if}>{$vo.name}</a></li>
+                    {/foreach}
+                    </ul>
+          		</div>
+      		</div>
+            <div class="dianhua">
+            	<div class="dianhua_top">联系电话</div>
+                <div class="dianhua_text">
+               	  联  系  人：陈波 （总裁） <br />
+                	电       话 ：86 0838 7102727<br />
+                	移动电话 ：	138-8180-1576<br />
+                	传       真 ：86 0838 7102771<br />
+               	地       址 ：	中国 四川 德阳市四川省德阳市中江县双龙镇                </div>
+            </div>
+        </div>
+        <div class="neiyeR">
+        	<div class="neiBT">
+            	<span class="mianT_span">产品介绍 | PRODUCTS</span>
+            </div>
+            <div class="product">
+                {foreach name='field' key='key' item='vo'}
+            	<div class="product_top">
+               	  <div class="product_name">
+                    	<img src="{$vo['image']}" alt="" style="width:390px;height:286px;"/>
+                  </div>
+                    <div class="product_info">
+                      <p class="prod_bt">中江柚</p>
+                   	  <p>{$vo['leibie']}</p>
+                   	  <p>{$vo['guige']}</p>
+                      <p>{$vo['chandi']}</p>
+                      <p>{$vo['jiage']}</p>
+                      <p>{$vo['shijian']}</p>
+                      <p class="prod_pad">
+                      		<span class="l">购买数量：</span>
+                      		<a href="#" class="prod_jia"></a>
+                            <input name="" type="text" class="prod_tetx" />
+                            <a href="#" class="prod_jian"></a>                            
+                      </p>
+                      <p><a href="#" class="prod_dg"></a></p>
+                    </div>
+                </div>
+                <div class="proTd">
+                	<div class="proTd_top">
+                    	产品特点
+                    </div>
+                    <div class="proTd_yte">
+                        <p>{$vo['tedian']}</p>
+                    </div>
+                </div>
+            </div>
+            {/foreach}
+      </div>
+    </div> 
+</div>
+{/block}

@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="author" content="$Id$" />
+<meta http-equiv="copyright" content="Copyright (C) 2013 * All rights reserved." />
+<meta http-equiv="keywords" content="关键字" />
+<meta http-equiv="description" content="描述" />
+<link type="text/css" href="__STATIC__/index/css/style.css" rel="stylesheet" rev="stylesheet" media="screen" />
+<title>首页</title>
+</head>
+
+<body>
+<div class="centBox">
+    <div class="top">
+        <span>【<a href="{:url('login/login')}">登陆管理</a> 】 【<a href="#">申请入驻</a>】  【<a href="{:url('index/index/index')}">前往采购</a>】  【<a href="{:url('index/Message/Message')}">联系我们</a>】</span>
+        您好！欢迎来到中江县名优产品展销平台!     您遇到任何疑问请致电：0838 -6668888   
+    </div>
+    <div class="top2">
+        <div class="top2R">
+            <div class="soru">
+                <input name="" type="text" class="soru_input" />
+            </div>
+            <input name="" type="submit" class="soru_banu" />
+        </div>
+        <div class="logo">
+            <a href="#" class="logo_a">中江名优特产</a>
+        </div>
+    </div>
+</div>
+<div class="nav">
+        <div class="nav_nei">
+            <div class="natebia_ji"></div>
+            <div class="natebia"><a href="#" class="natebia_a">特别推荐</a></div>
+            <div class="navR">
+                <ul>
+                    {foreach name='about'  item='vo'}
+                    <li><a href="{:url($vo['url'],['id'=>$vo['id']])}" {if condition="input('param.id')==$vo['id']"}class="xuanz"{/if}>{$vo.name}</a></li>
+                    {/foreach}
+                </ul>
+            </div>
+        </div>
+    </div>
+{block name="content"}{/block}
+
+    <div class="fooer">
+    <div class="fooer_nei">
+      服务中心  |  联系我们  |  平台介绍  |  网站地图  |  邮件反馈  |  友情链接<br />
+    <p><a href="#"><img src="__STATIC__/index/images/jg.gif" /></a></p>   
+    </div>
+</div>
+</body>
+</html>

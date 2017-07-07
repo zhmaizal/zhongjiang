@@ -1,0 +1,55 @@
+{extend name="base"}
+{block name="content"}
+<div class="centBox">
+	<div class="neiye clearfix">
+    	<div class="neiyeL">
+        	<div class="banL noel">
+       	 		 <div class="lanmu">
+				 <ul>
+       		  {foreach name='subnav'  item='vo'}
+                    <li><a href="{:url($vo['url'],['id'=>$vo['id']])}" {if condition="input('param.id')==$vo['id']"}class="xuanz"{/if}>{$vo.name}</a></li>
+                    {/foreach}
+					</ul>
+          		</div>
+      		</div>
+            <div class="dianhua">
+            	<div class="dianhua_top">联系电话</div>
+                <div class="dianhua_text">
+               	  联  系  人：陈波 （总裁） <br />
+                	电       话 ：86 0838 7102727<br />
+                	移动电话 ：	138-8180-1576<br />
+                	传       真 ：86 0838 7102771<br />
+               	地       址 ：	中国 四川 德阳市四川省德阳市中江县双龙镇                </div>
+            </div>
+        </div>
+        <div class="neiyeR">
+        	<div class="neiBT">
+            	<span class="mianT_span">技术支持 | TECHNOLOGY</span>
+            </div>
+            {foreach name='field' key='key' item='vo'}
+            <div class="feedbck">
+                    <p>{$vo['title']}</p>
+            	<div class="newsxx">
+                    <p>{$vo['content']}</p>
+              </div>
+            </div>
+            {/foreach}
+      <div class="feiye">
+                    	<ul>
+                        	<li><input type="submit" value="确定" class="feiye_ban" />
+                            <li>到第<input name="" type="text" class="feiye_ingp" />页</li>
+                            <li><a href="#">下一页</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#" class="xuanz">1</a></li>
+                        	<li><a href="#" class="feiye_hs">上一页</a></li>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+        </div>
+    </div> 
+</div>
+{/block}
